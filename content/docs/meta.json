@@ -1,0 +1,15 @@
+{
+  "title": "Docs",
+  "root": true,
+  "pages": [
+    "index",
+    "---Getting Started---",
+    "getting-started",
+    "---Core Concepts---",
+    "core-concepts",
+    "---Features---",
+    "features",
+    "---Deployment---",
+    "deployment"
+  ]
+}

@@ -1,13 +1,53 @@
 ---
-title: Hello World
-description: Your first document
+title: OpenAgent Documentation
+description: The open-source, enterprise-grade AI agent platform.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-## What is Next?
+# Welcome to OpenAgent
+
+OpenAgent is an open-source, enterprise-grade AI cloud platform that helps you build and deploy intelligent AI agents. Connect 30+ model providers, create agents with MCP tool support, manage knowledge bases, and reach users across 20+ messaging channels.
+
+## Quick Navigation
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
+  <Card
+    title="Getting Started"
+    description="Install OpenAgent and deploy your first AI agent in minutes."
+    href="/docs/getting-started"
+  />
+  <Card
+    title="Core Concepts"
+    description="Understand agents, models, and knowledge bases."
+    href="/docs/core-concepts/agents"
+  />
+  <Card
+    title="Features"
+    description="Explore MCP tool use, multi-channel gateway, and the plugin system."
+    href="/docs/features/mcp"
+  />
+  <Card
+    title="Deployment"
+    description="Deploy to production with Docker and configure your instance."
+    href="/docs/deployment/docker"
+  />
 </Cards>
+
+## What is OpenAgent?
+
+OpenAgent is a self-hosted platform built around three core capabilities:
+
+**Intelligent Agents** — Agents powered by any supported LLM that can reason, use tools via MCP, search your knowledge base, and call external APIs to complete complex tasks.
+
+**Knowledge Base** — Upload documents (PDF, Word, Excel, CSV, and more). OpenAgent chunks, embeds, and indexes them so agents can retrieve precise, grounded answers.
+
+**Multi-Channel Gateway** — One deployment reaches your users wherever they are: Telegram, Discord, Slack, WhatsApp, web chat, and more.
+
+## Why OpenAgent?
+
+- **Open source** — Apache 2.0 licensed. Self-host on your own infrastructure.
+- **Model agnostic** — Switch between providers without changing your agent logic.
+- **Privacy first** — Your data never leaves your servers.
+- **Extensible** — Add custom tools, channels, and model providers via plugins.
+- **Enterprise features** — SSO, RBAC, multi-tenancy, and audit logs built in.
