@@ -36,6 +36,14 @@ function XSVG({ className }: { className?: string }) {
   );
 }
 
+function DiscordSVG({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+    </svg>
+  );
+}
+
 function HeartSVG({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
@@ -316,7 +324,7 @@ export default function HomePage() {
     <main className="flex flex-col">
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section className="relative flex flex-col items-center justify-center overflow-hidden px-4 pb-24 pt-32 text-center md:pb-36 md:pt-48">
+      <section className="relative flex flex-col items-center justify-center overflow-hidden px-4 pb-20 pt-8 text-center md:pb-28 md:pt-16">
 
         {/* Tech grid background */}
         <div className="tech-grid dark:tech-grid pointer-events-none absolute inset-0 -z-20 opacity-100 dark:opacity-60" />
@@ -382,7 +390,7 @@ export default function HomePage() {
           <span className="block bg-gradient-to-r from-fd-primary via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
             OpenAgent
           </span>
-          <span className="block bg-gradient-to-r from-fd-foreground to-fd-foreground bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl font-bold mt-2">
+          <span className="block bg-gradient-to-r from-fd-foreground to-fd-foreground bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl font-bold mt-2 pb-4">
             Build agents that actually do things
           </span>
         </h1>
@@ -456,137 +464,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
-      <section className="border-b border-fd-border px-4 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-14 text-center">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-fd-primary">
-              // capabilities
-            </p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-fd-foreground md:text-4xl">
-              Everything you need to ship agents
-            </h2>
-            <p className="mx-auto max-w-xl text-fd-muted-foreground">
-              Not a toy framework. A complete, batteries-included platform trusted by
-              engineering teams at startups and Fortune 500s alike.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
-              <div key={f.title}
-                className={`card-glow-hover group relative overflow-hidden rounded-2xl border border-fd-border bg-fd-card p-6 transition-all duration-300 hover:shadow-xl ${f.border} ${f.glow}`}
-              >
-                <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ background: 'radial-gradient(ellipse at top left, var(--glow-c), transparent 65%)' }}
-                />
-                <div className="mb-4 flex items-start justify-between">
-                  <div className={`inline-flex rounded-xl p-2.5 ${f.bg}`}>
-                    <f.Icon className={`size-5 ${f.accent}`} />
-                  </div>
-                  <span className={`rounded-full border border-current/20 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${f.accent} opacity-70`}>
-                    {f.label}
-                  </span>
-                </div>
-                <h3 className="mb-2 font-semibold text-fd-foreground">{f.title}</h3>
-                <p className="text-sm leading-relaxed text-fd-muted-foreground">{f.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ WHAT PEOPLE SAY ═══════════════════════════════════════════════════ */}
-      <section className="border-b border-fd-border px-4 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-14 text-center">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-fd-primary">
-              // community
-            </p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-fd-foreground md:text-4xl">
-              What people are saying
-            </h2>
-            <p className="text-fd-muted-foreground">
-              Engineers, founders, and operators shipping real products with OpenAgent.
-            </p>
-          </div>
-          <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-            {testimonials.map((t) => (
-              <TweetCard key={t.handle} {...t} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ AS SEEN IN / PRESS ════════════════════════════════════════════════ */}
-      <section className="border-b border-fd-border px-4 py-16">
-        <div className="mx-auto max-w-5xl">
-          <p className="mb-10 text-center font-mono text-xs font-semibold uppercase tracking-widest text-fd-muted-foreground">
-            // as seen in
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {press.map((p) => (
-              <div key={p.source} className="card-glow-hover rounded-2xl border border-fd-border bg-fd-card p-5 transition-all duration-300 hover:border-fd-primary/30">
-                <div className="mb-3 flex items-center gap-3">
-                  <div className={`flex size-9 items-center justify-center rounded-lg font-bold text-xs ${p.logoBg} ${p.logoColor}`}>
-                    {p.logo}
-                  </div>
-                  <span className="text-xs font-semibold text-fd-muted-foreground">{p.source}</span>
-                </div>
-                <p className="mb-1 text-sm font-semibold text-fd-foreground">{p.headline}</p>
-                <p className="text-xs text-fd-muted-foreground">{p.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ EVENTS / ON THE HORIZON ═══════════════════════════════════════════ */}
-      <section className="border-b border-fd-border px-4 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-14 text-center">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-fd-primary">
-              // on the horizon
-            </p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-fd-foreground md:text-4xl">
-              Upcoming events &amp; releases
-            </h2>
-            <p className="text-fd-muted-foreground">
-              The OpenAgent ecosystem is moving fast. Stay ahead.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {events.map((e) => (
-              <div key={e.title} className="card-glow-hover group flex flex-col rounded-2xl border border-fd-border bg-fd-card p-6 transition-all duration-300 hover:border-fd-primary/30">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${e.badgeClass}`}>
-                    <span className={`size-1.5 rounded-full ${e.dotClass} animate-pulse`} />
-                    {e.badge}
-                  </span>
-                  <span className="rounded-full bg-fd-muted px-2.5 py-1 text-[10px] font-medium text-fd-muted-foreground">
-                    {e.type}
-                  </span>
-                </div>
-                <h3 className="mb-2 font-bold text-fd-foreground">{e.title}</h3>
-                <p className="mb-4 flex-1 text-sm leading-relaxed text-fd-muted-foreground">{e.description}</p>
-                <div className="mt-auto space-y-1.5 border-t border-fd-border pt-4 text-xs text-fd-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <CalendarIcon className="size-3.5 shrink-0 text-fd-primary" />
-                    {e.date}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="size-3.5 shrink-0 text-center text-fd-primary">📍</span>
-                    {e.location}
-                  </div>
-                </div>
-                <button className="mt-4 text-left text-xs font-semibold text-fd-primary transition-colors hover:text-fd-primary/80">
-                  {e.cta}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ══ QUICK START ═══════════════════════════════════════════════════════ */}
       <section className="border-b border-fd-border px-4 py-24">
         <div className="mx-auto max-w-6xl">
@@ -643,6 +520,45 @@ export default function HomePage() {
                 <p className="mt-1 text-fd-muted-foreground"># Dashboard running 🚀</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
+      <section className="border-b border-fd-border px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-14 text-center">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-widest text-fd-primary">
+              // capabilities
+            </p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-fd-foreground md:text-4xl">
+              Everything you need to ship agents
+            </h2>
+            <p className="mx-auto max-w-xl text-fd-muted-foreground">
+              Not a toy framework. A complete, batteries-included platform trusted by
+              engineering teams at startups and Fortune 500s alike.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((f) => (
+              <div key={f.title}
+                className={`card-glow-hover group relative overflow-hidden rounded-2xl border border-fd-border bg-fd-card p-6 transition-all duration-300 hover:shadow-xl ${f.border} ${f.glow}`}
+              >
+                <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: 'radial-gradient(ellipse at top left, var(--glow-c), transparent 65%)' }}
+                />
+                <div className="mb-4 flex items-start justify-between">
+                  <div className={`inline-flex rounded-xl p-2.5 ${f.bg}`}>
+                    <f.Icon className={`size-5 ${f.accent}`} />
+                  </div>
+                  <span className={`rounded-full border border-current/20 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${f.accent} opacity-70`}>
+                    {f.label}
+                  </span>
+                </div>
+                <h3 className="mb-2 font-semibold text-fd-foreground">{f.title}</h3>
+                <p className="text-sm leading-relaxed text-fd-muted-foreground">{f.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -757,34 +673,136 @@ export default function HomePage() {
       </section>
 
       {/* ══ FOOTER ════════════════════════════════════════════════════════════ */}
-      <footer className="border-t border-fd-border px-4 py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-2.5">
-            <img
-              src="https://cdn.openagentai.org/img/openagent-logo_1600x276.png"
-              alt="OpenAgent"
-              className="h-6 dark:hidden"
-            />
-            <img
-              src="https://cdn.openagentai.org/img/openagent-logo_1600x276_white.png"
-              alt="OpenAgent"
-              className="hidden h-6 dark:block"
-            />
+      <footer className="border-t border-fd-border bg-fd-card/30 px-4 pt-14 pb-8">
+        <div className="mx-auto max-w-6xl">
+
+          {/* Top grid */}
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+
+            {/* Brand column */}
+            <div className="lg:col-span-2">
+              <div className="mb-4 flex items-center gap-2.5">
+                <img src="https://cdn.openagentai.org/img/openagent-logo_1600x276.png" alt="OpenAgent" className="h-6 dark:hidden" />
+                <img src="https://cdn.openagentai.org/img/openagent-logo_1600x276_white.png" alt="OpenAgent" className="hidden h-6 dark:block" />
+              </div>
+              <p className="mb-6 max-w-xs text-sm leading-relaxed text-fd-muted-foreground">
+                Open-source agent platform with full MCP support, 30+ model providers, and 20+ messaging channels. Self-hosted. No vendor lock-in.
+              </p>
+              {/* Social icons */}
+              <div className="mb-5 flex items-center gap-3">
+                <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-lg border border-fd-border bg-fd-card text-fd-muted-foreground transition-colors hover:border-fd-primary/40 hover:text-fd-foreground"
+                  aria-label="GitHub"
+                >
+                  <GitHubSVG className="size-4" />
+                </a>
+                <a href="https://discord.gg/openagent" target="_blank" rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-lg border border-fd-border bg-fd-card text-fd-muted-foreground transition-colors hover:border-indigo-400/40 hover:text-indigo-400"
+                  aria-label="Discord"
+                >
+                  <DiscordSVG className="size-4" />
+                </a>
+                <a href="https://x.com/OpenAgentAI" target="_blank" rel="noopener noreferrer"
+                  className="flex size-9 items-center justify-center rounded-lg border border-fd-border bg-fd-card text-fd-muted-foreground transition-colors hover:border-fd-primary/40 hover:text-fd-foreground"
+                  aria-label="X (Twitter)"
+                >
+                  <XSVG className="size-4" />
+                </a>
+              </div>
+              {/* GitHub stars badge */}
+              <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-fd-border bg-fd-card px-3 py-1.5 text-xs font-medium text-fd-muted-foreground transition-colors hover:border-fd-primary/40 hover:text-fd-foreground"
+              >
+                <StarIcon className="size-3.5 text-yellow-400" />
+                <span className="font-semibold text-fd-foreground">4.5k+</span>
+                stars on GitHub
+              </a>
+            </div>
+
+            {/* Product column */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-fd-foreground">Product</h4>
+              <ul className="space-y-3 text-sm text-fd-muted-foreground">
+                <li><Link href="/docs/introduction" className="transition-colors hover:text-fd-foreground">Introduction</Link></li>
+                <li><Link href="/docs/install" className="transition-colors hover:text-fd-foreground">Installation</Link></li>
+                <li><Link href="/docs/build-a-chat-assistant" className="transition-colors hover:text-fd-foreground">Quick Start</Link></li>
+                <li><Link href="/docs/add-a-knowledge-base" className="transition-colors hover:text-fd-foreground">Knowledge Base</Link></li>
+                <li><Link href="/docs/tools-and-automation" className="transition-colors hover:text-fd-foreground">Tools & Automation</Link></li>
+                <li><Link href="/docs/connectors/mcp-servers" className="transition-colors hover:text-fd-foreground">MCP Servers</Link></li>
+              </ul>
+            </div>
+
+            {/* Community column */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-fd-foreground">Community</h4>
+              <ul className="space-y-3 text-sm text-fd-muted-foreground">
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">GitHub</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/openagent" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Discord</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/issues" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Issues</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/discussions" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Discussions</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/releases" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Releases</a>
+                </li>
+                <li>
+                  <a href="https://x.com/OpenAgentAI" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">X / Twitter</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal column */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-fd-foreground">Legal</h4>
+              <ul className="space-y-3 text-sm text-fd-muted-foreground">
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Apache 2.0 License</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Contributing</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Code of Conduct</a>
+                </li>
+                <li>
+                  <a href="https://github.com/the-open-agent/openagent/security" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Security</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <p className="text-center text-sm text-fd-muted-foreground">
-            Released under{' '}
-            <a href="https://github.com/the-open-agent/openagent/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"
-              className="underline underline-offset-2 transition-colors hover:text-fd-foreground"
-            >Apache 2.0</a>
-            {' '}· Built in the open ·{' '}
-            <a href="https://discord.gg/openagent" target="_blank" rel="noopener noreferrer"
-              className="underline underline-offset-2 transition-colors hover:text-fd-foreground"
-            >Join Discord</a>
-          </p>
-          <div className="flex gap-5 text-sm text-fd-muted-foreground">
-            <Link href="/docs" className="transition-colors hover:text-fd-foreground">Docs</Link>
-            <a href="https://github.com/the-open-agent/openagent/issues" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">Issues</a>
-            <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-fd-foreground">GitHub</a>
+
+          {/* Bottom bar */}
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-fd-border pt-6 sm:flex-row">
+            <p className="text-xs text-fd-muted-foreground">
+              © {new Date().getFullYear()} OpenAgent · Released under{' '}
+              <a href="https://github.com/the-open-agent/openagent/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"
+                className="underline underline-offset-2 transition-colors hover:text-fd-foreground"
+              >Apache 2.0</a>
+              {' '}· Built in the open
+            </p>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer"
+                className="text-fd-muted-foreground transition-colors hover:text-fd-foreground" aria-label="GitHub"
+              >
+                <GitHubSVG className="size-4" />
+              </a>
+              <a href="https://discord.gg/openagent" target="_blank" rel="noopener noreferrer"
+                className="text-fd-muted-foreground transition-colors hover:text-indigo-400" aria-label="Discord"
+              >
+                <DiscordSVG className="size-4" />
+              </a>
+              <a href="https://x.com/OpenAgentAI" target="_blank" rel="noopener noreferrer"
+                className="text-fd-muted-foreground transition-colors hover:text-fd-foreground" aria-label="X"
+              >
+                <XSVG className="size-4" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

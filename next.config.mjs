@@ -15,6 +15,7 @@ const config = {
   },
   async redirects() {
     return [
+      { source: '/docs', destination: '/docs/introduction', permanent: false },
       { source: '/docs/quick-start', destination: '/docs/install', permanent: true },
       { source: '/docs/what-is-openagent', destination: '/docs/introduction', permanent: true },
       { source: '/docs/add-tools-and-automation', destination: '/docs/tools-and-automation', permanent: true },
