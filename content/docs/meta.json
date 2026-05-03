@@ -3,10 +3,9 @@
   "root": true,
   "pages": [
     "index",
-    "---Introduction---",
     "what-is-openagent",
     "quick-start",
-    "---User Guides---",
+    "---Guides---",
     "build-a-chat-assistant",
     "add-a-knowledge-base",
     "add-tools-and-automation",

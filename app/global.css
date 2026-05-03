@@ -2,70 +2,58 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
-/* ─── Brand Token Overrides ────────────────────────────────────────────────── */
+/* ─── Brand Tokens ──────────────────────────────────────────────────────────── */
 
 :root {
-  /* Warm off-white light surface */
-  --color-fd-background: #F9F8F5;
-  --color-fd-foreground: #1C1917;
-
-  /* Violet as primary brand color */
-  --color-fd-primary: #7C3AED;
+  /* Cool off-white light mode — technical, not warm */
+  --color-fd-background: #F5F5FB;
+  --color-fd-foreground: #0A0A1A;
+  --color-fd-primary: #6D28D9;
   --color-fd-primary-foreground: #FFFFFF;
-
-  /* Soft lavender tint for accents */
   --color-fd-accent: #EDE9FE;
-  --color-fd-accent-foreground: #3730A3;
-
-  /* Cards and surfaces */
+  --color-fd-accent-foreground: #3B1CB8;
   --color-fd-card: #FFFFFF;
-  --color-fd-card-foreground: #1C1917;
+  --color-fd-card-foreground: #0A0A1A;
   --color-fd-popover: #FFFFFF;
-  --color-fd-popover-foreground: #1C1917;
+  --color-fd-popover-foreground: #0A0A1A;
+  --color-fd-muted: #EDEDF5;
+  --color-fd-muted-foreground: #5A5A8A;
+  --color-fd-secondary: #EDE9FE;
+  --color-fd-secondary-foreground: #4C1D95;
+  --color-fd-border: #DCDCF0;
+  --color-fd-ring: #6D28D9;
 
-  /* Muted / secondary */
-  --color-fd-muted: #F4F3EE;
-  --color-fd-muted-foreground: #78716C;
-  --color-fd-secondary: #F0EEFF;
-  --color-fd-secondary-foreground: #5B21B6;
+  /* Ambient blobs */
+  --glow-a: rgba(109, 40, 217, 0.18);
+  --glow-b: rgba(34, 211, 238, 0.10);
+  --glow-c: rgba(167, 139, 250, 0.08);
 
-  /* Borders & focus ring */
-  --color-fd-border: #E8E5DC;
-  --color-fd-ring: #7C3AED;
-
-  /* Ambient glow colours used in hero blobs */
-  --glow-a: rgba(124, 58, 237, 0.18);
-  --glow-b: rgba(99, 102, 241, 0.12);
-  --glow-c: rgba(167, 139, 250, 0.10);
+  /* Tech accents */
+  --cyan:  #22D3EE;
+  --green: #4ADE80;
 }
 
 .dark {
-  /* Deep near-black background */
-  --color-fd-background: #09090E;
-  --color-fd-foreground: #E4E3DF;
-
-  /* Lighter violet in dark mode */
-  --color-fd-primary: #A78BFA;
-  --color-fd-primary-foreground: #0A0614;
-
-  --color-fd-accent: #1C1530;
+  /* Near-black "deep space" dark mode */
+  --color-fd-background: #06060B;
+  --color-fd-foreground: #E8E8F5;
+  --color-fd-primary: #9D71FB;
+  --color-fd-primary-foreground: #04020D;
+  --color-fd-accent: #130F26;
   --color-fd-accent-foreground: #C4B5FD;
+  --color-fd-card: #0B0B14;
+  --color-fd-card-foreground: #E8E8F5;
+  --color-fd-popover: #0B0B14;
+  --color-fd-popover-foreground: #E8E8F5;
+  --color-fd-muted: #0F0F1C;
+  --color-fd-muted-foreground: #6A6A9A;
+  --color-fd-secondary: #130F26;
+  --color-fd-secondary-foreground: #A78BFA;
+  --color-fd-border: #1A1928;
+  --color-fd-ring: #9D71FB;
 
-  --color-fd-card: #0E0E16;
-  --color-fd-card-foreground: #E4E3DF;
-  --color-fd-popover: #0E0E16;
-  --color-fd-popover-foreground: #E4E3DF;
-
-  --color-fd-muted: #141420;
-  --color-fd-muted-foreground: #71717A;
-  --color-fd-secondary: #1A1430;
-  --color-fd-secondary-foreground: #C4B5FD;
-
-  --color-fd-border: #1E1D2C;
-  --color-fd-ring: #A78BFA;
-
-  --glow-a: rgba(167, 139, 250, 0.14);
-  --glow-b: rgba(129, 140, 248, 0.09);
+  --glow-a: rgba(157, 113, 251, 0.18);
+  --glow-b: rgba(34, 211, 238, 0.10);
   --glow-c: rgba(196, 181, 253, 0.07);
 }
 
@@ -80,21 +68,10 @@ html > body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 0px !important;
 }
 
-/* Thin custom scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-fd-border);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-fd-muted-foreground);
-}
+::-webkit-scrollbar          { width: 4px; height: 4px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: var(--color-fd-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-fd-muted-foreground); }
 
 /* ─── Sidebar ───────────────────────────────────────────────────────────────── */
 
@@ -105,69 +82,163 @@ aside {
 aside a[data-active='true'] {
   color: var(--color-fd-primary) !important;
   background-color: var(--color-fd-accent) !important;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+/* Dark mode sidebar: subtle left glow on active items */
+.dark aside a[data-active='true'] {
+  box-shadow: inset 2px 0 0 var(--color-fd-primary);
 }
 
 /* ─── Prose ─────────────────────────────────────────────────────────────────── */
 
 .prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   font-size: 13px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
 /* ─── Hero background helpers ───────────────────────────────────────────────── */
 
-.dot-grid {
-  background-image: radial-gradient(
-    circle,
-    var(--color-fd-border) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
+/* Fine line grid — technical/circuit feel */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Light mode grid */
+.tech-grid-light {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* ─── Animations ────────────────────────────────────────────────────────────── */
 
+/* Horizontal scan-line sweeping down */
+@keyframes scan-down {
+  0%   { top: -2px; opacity: 0; }
+  3%   { opacity: 1; }
+  97%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Ambient blob drift */
 @keyframes blob-drift {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  33% {
-    transform: translate(calc(-50% + 30px), calc(-50% - 20px)) scale(1.05);
-  }
-  66% {
-    transform: translate(calc(-50% - 20px), calc(-50% + 15px)) scale(0.96);
-  }
+  0%, 100% { transform: translate(-50%, -50%) scale(1)    rotate(0deg); }
+  33%       { transform: translate(calc(-50% + 40px), calc(-50% - 30px)) scale(1.06) rotate(2deg); }
+  66%       { transform: translate(calc(-50% - 30px), calc(-50% + 20px)) scale(0.95) rotate(-1deg); }
 }
 
-@keyframes badge-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 var(--glow-a); }
-  50%       { box-shadow: 0 0 0 6px transparent; }
+@keyframes blob-drift-2 {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%       { transform: scale(1.12) rotate(5deg); }
 }
 
+/* Marquee scroll */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pulsing glow on primary elements */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(157, 113, 251, 0); }
+  50%       { box-shadow: 0 0 24px 4px rgba(157, 113, 251, 0.35); }
+}
+
+/* Shimmer border */
+@keyframes border-shimmer {
+  0%, 100% { border-color: rgba(157, 113, 251, 0.25); }
+  50%       { border-color: rgba(157, 113, 251, 0.70); }
+}
+
+/* Number appear from below */
+@keyframes stat-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Badge blink */
+@keyframes badge-ping {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0; }
+}
+
+/* Staggered fade-up */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-blob {
-  animation: blob-drift 12s ease-in-out infinite;
+/* Reveal text with clip */
+@keyframes text-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
 }
-.animate-blob-delayed {
-  animation: blob-drift 15s ease-in-out 4s infinite;
+
+/* ── Utility classes ── */
+
+.animate-blob          { animation: blob-drift 14s ease-in-out infinite; }
+.animate-blob-2        { animation: blob-drift-2 18s ease-in-out infinite; }
+.animate-scan-down     { animation: scan-down 6s linear infinite; }
+.animate-marquee       { animation: marquee 30s linear infinite; }
+.animate-glow-pulse    { animation: glow-pulse 2.5s ease-in-out infinite; }
+.animate-border-shimmer{ animation: border-shimmer 3s ease-in-out infinite; }
+
+.animate-fade-up       { animation: fade-up 0.6s ease both; }
+.animate-fade-up-1     { animation-delay: 0.06s; }
+.animate-fade-up-2     { animation-delay: 0.14s; }
+.animate-fade-up-3     { animation-delay: 0.22s; }
+.animate-fade-up-4     { animation-delay: 0.30s; }
+.animate-fade-up-5     { animation-delay: 0.38s; }
+
+.animate-text-reveal   { animation: text-reveal 0.8s cubic-bezier(0.77,0,0.175,1) 0.2s both; }
+
+.animate-stat-rise     { animation: stat-rise 0.5s ease both; }
+.animate-stat-rise-1   { animation-delay: 0.1s; }
+.animate-stat-rise-2   { animation-delay: 0.2s; }
+.animate-stat-rise-3   { animation-delay: 0.3s; }
+.animate-stat-rise-4   { animation-delay: 0.4s; }
+
+/* ─── Neon card glow (dark only) ────────────────────────────────────────────── */
+
+.dark .card-glow-hover {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.animate-badge-pulse {
-  animation: badge-pulse 2.5s ease-in-out infinite;
+.dark .card-glow-hover:hover {
+  box-shadow: 0 0 32px -4px rgba(157, 113, 251, 0.2),
+              inset 0 0 0 1px rgba(157, 113, 251, 0.25);
 }
-.animate-fade-up {
-  animation: fade-up 0.6s ease both;
+
+/* ─── Glowing CTA button ────────────────────────────────────────────────────── */
+
+.btn-glow {
+  position: relative;
+  transition: all 0.2s ease;
 }
-.animate-fade-up-1 { animation-delay: 0.05s; }
-.animate-fade-up-2 { animation-delay: 0.12s; }
-.animate-fade-up-3 { animation-delay: 0.20s; }
-.animate-fade-up-4 { animation-delay: 0.28s; }
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--color-fd-primary);
+  opacity: 0;
+  filter: blur(12px);
+  z-index: -1;
+  transition: opacity 0.2s ease;
+}
+
+.btn-glow:hover::after {
+  opacity: 0.4;
+}
+
+/* ─── Monospace stat numbers ─────────────────────────────────────────────────── */
+
+.stat-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}

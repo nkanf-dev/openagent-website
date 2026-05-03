@@ -16,12 +16,26 @@ export const metadata: Metadata = {
   },
   description:
     'Open-source, enterprise-grade AI agent platform. Connect 30+ model providers, build intelligent agents with MCP tool use, and deploy across 20+ messaging channels.',
-  keywords: ['AI agents', 'MCP', 'open source', 'LLM', 'multi-agent', 'self-hosted'],
+  keywords: ['AI agents', 'MCP', 'open source', 'LLM', 'multi-agent', 'self-hosted', 'enterprise AI'],
+  icons: {
+    icon: [
+      { url: 'https://cdn.openagentai.org/img/openagent.png', type: 'image/png' },
+    ],
+    apple: 'https://cdn.openagentai.org/img/openagent.png',
+    shortcut: 'https://cdn.openagentai.org/img/openagent.png',
+  },
   openGraph: {
     type: 'website',
     title: 'OpenAgent — The Open Agent Platform',
     description:
       'Open-source, enterprise-grade AI agent platform. Connect 30+ model providers and deploy across 20+ messaging channels.',
+    images: [{ url: 'https://cdn.openagentai.org/img/openagent.png' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'OpenAgent — The Open Agent Platform',
+    description: 'Open-source AI agent platform. 30+ models, 20+ channels, self-hosted.',
+    images: ['https://cdn.openagentai.org/img/openagent.png'],
   },
 };
 
