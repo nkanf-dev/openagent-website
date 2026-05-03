@@ -76,10 +76,10 @@ const features = [
     description:
       'Full MCP (Model Context Protocol) support. Agents use tools, call APIs, and reason across multi-step workflows with persistent memory.',
     label: 'MCP Native',
-    accent: 'text-violet-400 dark:text-violet-300',
-    bg: 'bg-violet-500/10',
-    border: 'hover:border-violet-500/40',
-    glow: 'hover:shadow-violet-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
   {
     Icon: BrainIcon,
@@ -87,10 +87,10 @@ const features = [
     description:
       'Unified interface for OpenAI, Claude, Gemini, DeepSeek, Qwen, Mistral, and 25+ more. Switch providers with one config line — zero code changes.',
     label: 'Vendor-Free',
-    accent: 'text-cyan-400 dark:text-cyan-300',
-    bg: 'bg-cyan-500/10',
-    border: 'hover:border-cyan-500/40',
-    glow: 'hover:shadow-cyan-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
   {
     Icon: DatabaseIcon,
@@ -98,10 +98,10 @@ const features = [
     description:
       'Upload docs, PDFs, spreadsheets. Agents retrieve precise context via vector search. Supports Qdrant, Pinecone, Milvus, PgVector. 94%+ accuracy.',
     label: 'RAG Ready',
-    accent: 'text-emerald-400 dark:text-emerald-300',
-    bg: 'bg-emerald-500/10',
-    border: 'hover:border-emerald-500/40',
-    glow: 'hover:shadow-emerald-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
   {
     Icon: MessageSquareIcon,
@@ -109,10 +109,10 @@ const features = [
     description:
       'Deploy one agent across Telegram, Discord, Slack, WhatsApp, Teams, and 15+ more simultaneously. One deployment, every platform.',
     label: '20+ Channels',
-    accent: 'text-blue-400 dark:text-blue-300',
-    bg: 'bg-blue-500/10',
-    border: 'hover:border-blue-500/40',
-    glow: 'hover:shadow-blue-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
   {
     Icon: PuzzleIcon,
@@ -120,10 +120,10 @@ const features = [
     description:
       'Write custom tools, model providers, channels, and workflows with a clean plugin API. Ship production integrations in hours, not weeks.',
     label: 'Extensible',
-    accent: 'text-orange-400 dark:text-orange-300',
-    bg: 'bg-orange-500/10',
-    border: 'hover:border-orange-500/40',
-    glow: 'hover:shadow-orange-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
   {
     Icon: ShieldIcon,
@@ -131,82 +131,82 @@ const features = [
     description:
       'SSO via Casdoor, role-based access control, complete audit logs, multi-tenant isolation, and air-gap deployable for regulated industries.',
     label: 'SOC2 Ready',
-    accent: 'text-red-400 dark:text-red-300',
-    bg: 'bg-red-500/10',
-    border: 'hover:border-red-500/40',
-    glow: 'hover:shadow-red-500/10',
+    accent: 'text-slate-700 dark:text-slate-300',
+    bg: 'bg-slate-500/10',
+    border: 'hover:border-slate-500/40',
+    glow: 'hover:shadow-slate-500/10',
   },
 ];
 
 const testimonials = [
   {
-    initial: 'M', color: '#3B82F6',
+    avatar: 'https://i.pravatar.cc/150?img=12',
     name: 'Marcus Reyes', handle: 'marcusreyes_dev',
     content: 'Been using @OpenAgentAI for 3 months powering our customer support. 10k+ msgs/day across 3 channels, zero downtime. The MCP tool integration is genuinely insane 🔥',
     likes: 847, reposts: 124, date: 'Mar 12', role: 'Senior Engineer @ Stripe',
   },
   {
-    initial: 'S', color: '#8B5CF6',
+    avatar: 'https://i.pravatar.cc/150?img=45',
     name: 'Sarah Chen', handle: 'sarahchen_builds',
     content: 'OpenAgent + Telegram = the perfect async ops dashboard. Our team gets AI engineering briefings every morning. Replaced 3 SaaS tools. Cut costs by 60%.',
     likes: 1203, reposts: 287, date: 'Mar 28', role: 'CTO @ Lucent Labs',
   },
   {
-    initial: 'J', color: '#10B981',
+    avatar: 'https://i.pravatar.cc/150?img=33',
     name: 'Janusz Kowalski', handle: 'janusz_mlops',
     content: 'Integrated @OpenAgentAI with our 50k-doc internal knowledge base. Retrieval accuracy: 67% → 94%. The semantic search is not playing around.',
     likes: 562, reposts: 89, date: 'Apr 1', role: 'ML Lead @ Booking.com',
   },
   {
-    initial: 'R', color: '#F97316',
+    avatar: 'https://i.pravatar.cc/150?img=60',
     name: 'Rakesh Sharma', handle: 'rakesh_solutionarch',
     content: 'Deployed OpenAgent on-prem for our banking client. Compliance team approved first review. Audit logs, RBAC, SSO all just work. Enterprise-grade isn\'t marketing fluff here.',
     likes: 934, reposts: 201, date: 'Apr 5', role: 'Solutions Architect',
   },
   {
-    initial: 'K', color: '#06B6D4',
+    avatar: 'https://i.pravatar.cc/150?img=15',
     name: 'Kai Hoffman', handle: 'llm_whisperer',
     content: 'Gemini → Claude → Qwen fallback chain routes by query complexity. Saved ~40% on API costs in month one. Smart multi-model routing is criminally underrated.',
     likes: 1891, reposts: 412, date: 'Apr 8', role: 'AI Infrastructure Engineer',
   },
   {
-    initial: 'A', color: '#EC4899',
+    avatar: 'https://i.pravatar.cc/150?img=47',
     name: 'Alex Park', handle: 'alex_platform_eng',
     content: 'Finally an agent platform that doesn\'t need to own my data. Self-hosted on k8s, air-gapped. This is what enterprise-ready actually looks like.',
     likes: 2140, reposts: 534, date: 'Apr 9', role: 'Platform Engineer',
   },
   {
-    initial: 'D', color: '#EAB308',
+    avatar: 'https://i.pravatar.cc/150?img=38',
     name: 'Diana Foster', handle: 'di_indie_builds',
     content: 'Shipped a Discord bot powered by OpenAgent in 2 hours. Reads our Notion docs, answers questions, escalates to humans when needed. My users think we have a full support team lol',
     likes: 3201, reposts: 891, date: 'Apr 11', role: 'Indie Hacker',
   },
   {
-    initial: 'T', color: '#6366F1',
+    avatar: 'https://i.pravatar.cc/150?img=52',
     name: 'Tom Blackwood', handle: 'tomblackwood_ai',
     content: 'Used 5 agent frameworks before settling on OpenAgent. Clean API, sane defaults, actual multi-tenant support, and it doesn\'t fight you off the happy path.',
     likes: 788, reposts: 156, date: 'Apr 13', role: 'Freelance AI Developer',
   },
   {
-    initial: 'N', color: '#EF4444',
+    avatar: 'https://i.pravatar.cc/150?img=44',
     name: 'Nadia Okonkwo', handle: 'nadia_data_eng',
     content: 'Running 200+ concurrent agent sessions across 15 enterprise clients from one deployment. OpenAgent just handles it. The observability built in is chef\'s kiss 🤌',
     likes: 1456, reposts: 342, date: 'Apr 15', role: 'Agency Founder',
   },
   {
-    initial: 'L', color: '#14B8A6',
+    avatar: 'https://i.pravatar.cc/150?img=68',
     name: 'Liam Chen', handle: 'liamchen_revops',
     content: 'The plugin system is where OpenAgent shines. We wrote a custom Salesforce integration in an afternoon. Agents now update CRM records autonomously. RevOps team is obsessed.',
     likes: 671, reposts: 98, date: 'Apr 17', role: 'RevOps Engineer',
   },
   {
-    initial: 'F', color: '#A855F7',
+    avatar: 'https://i.pravatar.cc/150?img=59',
     name: 'Felix Wagner', handle: 'felix_deepseek_labs',
     content: 'Switch from GPT-4o to DeepSeek-V3 is one config line. Same agent behavior, 10× lower cost. No vendor lock-in is not a feature — it\'s the whole point of OpenAgent.',
     likes: 2847, reposts: 723, date: 'Apr 19', role: 'Research Engineer',
   },
   {
-    initial: 'P', color: '#D946EF',
+    avatar: 'https://i.pravatar.cc/150?img=43',
     name: 'Priya Anand', handle: 'priya_builds',
     content: 'OpenAgent\'s WhatsApp integration handles our entire customer onboarding. From KYC doc collection to account setup. 0 → 500 customers in 3 weeks with 2 engineers.',
     likes: 4102, reposts: 1024, date: 'Apr 21', role: 'Co-founder @ FinTech',
@@ -217,7 +217,7 @@ const events = [
   {
     badge: 'LIVE', dotClass: 'bg-emerald-400', badgeClass: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/30',
     title: 'Agent Summit 2026',
-    description: 'The first conference for production AI agents. OpenAgent team presenting Agent Protocol 2.0 and the new mesh networking architecture.',
+    description: 'The first conference for production AI agents. OpenAgent team presenting the new mesh networking architecture and advanced MCP integrations.',
     date: 'June 12–14, 2026', location: 'San Francisco, CA', type: 'Conference', cta: 'Register Now →',
   },
   {
@@ -229,7 +229,7 @@ const events = [
   {
     badge: 'SOON', dotClass: 'bg-violet-400', badgeClass: 'text-violet-400 bg-violet-400/10 border-violet-400/30',
     title: 'OpenAgent v3.0',
-    description: 'Agent mesh networking, native A2A protocol support, 40% latency improvements, and a completely redesigned plugin SDK.',
+    description: 'Agent mesh networking, enhanced MCP protocol support, 40% latency improvements, and a completely redesigned plugin SDK.',
     date: 'Q2 2026', location: 'GitHub Release', type: 'Release', cta: 'Watch Changelog →',
   },
 ];
@@ -253,17 +253,16 @@ const selfHostBenefits = [
 
 /* ── Sub-components ─────────────────────────────────────────────────────────── */
 
-function TweetCard({ initial, color, name, handle, content, likes, reposts, date, role }: typeof testimonials[0]) {
+function TweetCard({ avatar, name, handle, content, likes, reposts, date, role }: typeof testimonials[0]) {
   return (
     <div className="card-glow-hover mb-4 break-inside-avoid rounded-2xl border border-fd-border bg-fd-card p-5 transition-all duration-300 hover:border-fd-primary/40">
       <div className="mb-3 flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-            style={{ backgroundColor: color }}
-          >
-            {initial}
-          </div>
+          <img
+            src={avatar}
+            alt={name}
+            className="size-9 shrink-0 rounded-full object-cover"
+          />
           <div>
             <p className="text-sm font-semibold leading-tight text-fd-foreground">{name}</p>
             <p className="text-xs text-fd-muted-foreground">@{handle}</p>
@@ -333,27 +332,17 @@ export default function HomePage() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
           <span className="text-emerald-500 dark:text-emerald-400">NEW</span>
-          &nbsp;Agent Protocol 2.0 is live
+          &nbsp;Full MCP support is live
           <ZapIcon className="size-3 text-yellow-500" />
         </div>
 
         {/* Heading */}
-        <h1 className="animate-fade-up animate-fade-up-1 mb-6 max-w-4xl text-5xl font-extrabold tracking-tight md:text-7xl lg:text-8xl">
-          <span className="block"
-            style={{
-              background: 'linear-gradient(135deg, var(--color-fd-foreground) 0%, var(--color-fd-foreground) 45%, var(--color-fd-primary) 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}
-          >
-            Build agents
+        <h1 className="animate-fade-up animate-fade-up-1 mb-6 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight md:text-7xl lg:text-8xl">
+          <span className="block bg-gradient-to-r from-fd-foreground to-fd-foreground bg-clip-text text-transparent">
+            Build agents that
           </span>
-          <span className="block"
-            style={{
-              background: 'linear-gradient(135deg, var(--color-fd-primary) 0%, #818CF8 50%, var(--cyan) 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}
-          >
-            that actually do things.
+          <span className="block bg-gradient-to-r from-fd-primary via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+            actually do things
           </span>
         </h1>
 
@@ -400,11 +389,19 @@ export default function HomePage() {
       </section>
 
       {/* ══ INTEGRATION MARQUEE ══════════════════════════════════════════════ */}
-      <div className="border-y border-fd-border bg-fd-muted/30 py-4 overflow-hidden">
+      <div className="border-y border-fd-border bg-fd-muted/30 py-4 overflow-hidden relative">
         <div className="flex">
-          <div className="animate-marquee flex shrink-0 items-center gap-0">
-            {[...integrations, ...integrations].map((name, i) => (
+          <div className="animate-marquee flex shrink-0 items-center gap-0 pr-3">
+            {integrations.map((name, i) => (
               <span key={i} className="mx-3 inline-flex items-center gap-1.5 rounded-full border border-fd-border bg-fd-card px-3 py-1 text-xs font-medium text-fd-muted-foreground whitespace-nowrap">
+                <span className="size-1.5 rounded-full bg-fd-primary opacity-60" />
+                {name}
+              </span>
+            ))}
+          </div>
+          <div className="animate-marquee flex shrink-0 items-center gap-0 pr-3">
+            {integrations.map((name, i) => (
+              <span key={`dup-${i}`} className="mx-3 inline-flex items-center gap-1.5 rounded-full border border-fd-border bg-fd-card px-3 py-1 text-xs font-medium text-fd-muted-foreground whitespace-nowrap">
                 <span className="size-1.5 rounded-full bg-fd-primary opacity-60" />
                 {name}
               </span>
@@ -717,9 +714,16 @@ export default function HomePage() {
       <footer className="border-t border-fd-border px-4 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2.5">
-            <BotIcon className="size-5 text-fd-primary" />
-            <span className="font-semibold tracking-tight text-fd-foreground">OpenAgent</span>
-            <span className="font-mono text-xs text-fd-muted-foreground">v2.0</span>
+            <img 
+              src="https://cdn.openagentai.org/img/openagent-logo_1600x276.png" 
+              alt="OpenAgent"
+              className="h-6 dark:hidden"
+            />
+            <img 
+              src="https://cdn.openagentai.org/img/openagent-logo_1600x276_white.png" 
+              alt="OpenAgent"
+              className="hidden h-6 dark:block"
+            />
           </div>
           <p className="text-center text-sm text-fd-muted-foreground">
             Released under{' '}

@@ -16,21 +16,24 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 
 The goal of this guide is to reach the **"First Message"** milestone as quickly as possible. OpenAgent runs on port `14000` by default.
 
-## What you need
+## Prerequisites
 
-<Card title="OpenAgent installed" icon="package">
-  See deployment options in the section below.
-</Card>
+Before you begin, make sure you have:
 
-<Card title="API key" icon="key">
-  From a model provider: DeepSeek, OpenAI, Anthropic, or any supported provider.
-</Card>
+<Cards>
+  <Card title="OpenAgent Installed" icon="package">
+    Choose a deployment method below: one-line installer, Docker, or development setup.
+  </Card>
+  <Card title="API Key" icon="key">
+    Get an API key from a model provider like DeepSeek, OpenAI, Anthropic, or any supported provider.
+  </Card>
+</Cards>
 
 ## Deploy the Infrastructure
 
 <Steps>
   <Step>
-    Choose the deployment method that fits your environment.
+    ### Choose Your Deployment Method
 
     <Tabs items={['One-Line Install', 'Docker', 'Development']}>
     <Tab value="One-Line Install">
@@ -137,5 +140,5 @@ Transition from a standard LLM to a **Knowledge Agent** by indexing your own doc
   <Card title="Build a Chat Assistant" description="Create a chat assistant backed by any LLM provider." href="/docs/build-a-chat-assistant" />
   <Card title="Add a Knowledge Base" description="Enable RAG so your assistant answers from your own documents." href="/docs/add-a-knowledge-base" />
   <Card title="Tools & Automation" description="Give your agent the ability to browse, call APIs, or delegate to sub-agents." href="/docs/add-tools-and-automation" />
-  <Card title="Architecture" description="Understand the four layers of OpenAgent." href="/docs/what-is-openagent" />
+  <Card title="Introduction" description="Understand the four layers of OpenAgent." href="/docs/what-is-openagent" />
 </Cards>

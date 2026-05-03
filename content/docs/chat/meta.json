@@ -2,6 +2,6 @@
   "title": "Chat",
   "pages": [
     "index",
-    "chat-configuration"
+    "agent-configuration"
   ]
 }

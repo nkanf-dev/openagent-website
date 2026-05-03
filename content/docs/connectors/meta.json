@@ -2,6 +2,7 @@
   "title": "Connectors",
   "pages": [
     "providers",
-    "tools"
+    "tools",
+    "servers"
   ]
 }

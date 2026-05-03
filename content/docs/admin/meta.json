@@ -1,6 +1,7 @@
 {
   "title": "Admin",
   "pages": [
+    "resources",
     "sites",
     "usages",
     "activities",
