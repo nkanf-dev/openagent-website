@@ -5,6 +5,6 @@ export const docsContentRoute = '/llms.mdx/docs';
 
 export const gitConfig = {
   user: 'the-open-agent',
-  repo: 'openagent',
-  branch: 'main',
+  repo: 'openagent-website',
+  branch: 'master',
 };
