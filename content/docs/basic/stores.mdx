@@ -55,9 +55,11 @@ Professional chunking strategies to optimize retrieval accuracy:
 - **Markdown**: Heading-aware, preserves the structural context of technical docs.
 - **QA**: **(Professional Choice)** Specifically optimized for FAQ-style files, ensuring questions and answers stay together in a single vector.
 
-<Callout type="warn">
-  **Screenshot Placeholder:** The Store edit form highlighting the "Split Provider" dropdown with the QA option selected.
+<Callout type="info">
+  The **Split Provider** is configured in the Store edit form under the retrieval settings. Use `QA` for FAQ-style content where question/answer pairs should stay in the same chunk.
 </Callout>
+
+![Store split provider configuration](/img/docs/openagent/split-provider.png)
 
 **Search Provider**  
 - **Default**: Standard vector similarity search.
@@ -72,9 +74,11 @@ OpenAgent includes built-in safeguards to ensure agent responses remain within c
 **Forbidden Words**  
 A configurable list of blocked terms. If a user's query or the model's potential response contains these words, OpenAgent will intercept the request and return a standardized refusal.
 
-<Callout type="warn">
-  **Screenshot Placeholder:** The "Forbidden Words" configuration area in the Store settings.
+<Callout type="info">
+  **Forbidden Words** are configured in the lower section of the Store settings, alongside other content-safety controls.
 </Callout>
+
+![Store forbidden words configuration](/img/docs/openagent/forbidden-words.png)
 
 ---
 
@@ -87,9 +91,11 @@ Instead of creating one massive, unmanageable Store, you can link multiple speci
 
 *Example: A "Company Handbook" Store can link to a "Legal Store," an "HR Store," and a "Technical Specs Store" to provide a unified corporate brain while keeping data management decentralized.*
 
-<Callout type="warn">
-  **Screenshot Placeholder:** The Store configuration UI showing the "Child Stores" selection interface.
+<Callout type="info">
+  **Child Stores** are selected in the Store configuration form and let one Store search across the knowledge bases of several specialized Stores.
 </Callout>
+
+![Store child stores selection](/img/docs/openagent/child-stores.png)
 
 ---
 
