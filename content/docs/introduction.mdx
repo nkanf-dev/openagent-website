@@ -1,7 +1,6 @@
 ---
-title: OpenAgent
+title: Introduction
 description: The open-source infrastructure for production AI agents and knowledge bases.
-hidden: true
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
@@ -9,7 +8,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { MessageSquare, Library, Construction, ShieldCheck, Cpu, Zap } from 'lucide-react';
 
-# OpenAgent
+# Introduction
 
 > _"Build once, deploy everywhere."_
 
@@ -19,8 +18,8 @@ import { MessageSquare, Library, Construction, ShieldCheck, Cpu, Zap } from 'luc
 </div>
 
 <Cards>
-  <Card icon={<Zap className="text-blue-500" />} title="Quick Start" description="Get OpenAgent running and send your first AI-powered message in under 5 minutes." href="/docs/quick-start" />
-  <Card icon={<Construction className="text-green-500" />} title="Architecture" description="Understand the four layers of OpenAgent: Intelligence, Identity, Context, and Action." href="/docs/what-is-openagent" />
+  <Card icon={<Zap className="text-blue-500" />} title="Install" description="Get OpenAgent running and send your first AI-powered message in under 5 minutes." href="/docs/install" />
+  <Card icon={<Construction className="text-green-500" />} title="Build a Chat Assistant" description="Step-by-step guide to creating your first agent." href="/docs/build-a-chat-assistant" />
 </Cards>
 
 ## What is OpenAgent?
@@ -44,8 +43,8 @@ OpenAgent is a **self-hosted AI agent platform** that connects your data, tools,
 <Cards>
   <Card icon={<MessageSquare className="text-purple-500" />} title="Model Orchestration" description="Seamlessly switch between 20+ providers. Configure fallback models for high availability." href="/docs/build-a-chat-assistant" />
   <Card icon={<Library className="text-orange-500" />} title="Managed RAG" description="Professional document indexing and retrieval. Turn PDFs and wikis into grounded context." href="/docs/add-a-knowledge-base" />
-  <Card icon={<Cpu className="text-red-500" />} title="Tool Integration" description="Extend agents with MCP servers, built-in automation tools, or A2A delegation." href="/docs/add-tools-and-automation" />
-  <Card icon={<ShieldCheck className="text-cyan-500" />} title="Operational Security" description="Role-based access control (RBAC), SSO integration, and comprehensive audit logs." href="/docs/admin/users" />
+  <Card icon={<Cpu className="text-red-500" />} title="Tool Integration" description="Extend agents with MCP servers, built-in automation tools, or A2A delegation." href="/docs/tools-and-automation" />
+  <Card icon={<ShieldCheck className="text-cyan-500" />} title="Operational Security" description="Role-based access control (RBAC), SSO integration, and comprehensive audit logs." href="/docs/admin/enterprise-sso" />
 </Cards>
 
 ## Quick start
@@ -91,12 +90,11 @@ Need a deeper walkthrough? See [Build a Chat Assistant](/docs/build-a-chat-assis
 ## Start here
 
 <Cards>
-  <Card title="Architecture" description="Understand the four layers: Intelligence, Identity, Context, and Action." href="/docs/what-is-openagent" />
-  <Card title="Quick Start" description="Deploy OpenAgent and reach the First Message milestone." href="/docs/quick-start" />
+  <Card title="Install" description="Deploy OpenAgent and reach the First Message milestone." href="/docs/install" />
   <Card title="Chat Assistant" description="Create a chat assistant backed by any LLM provider." href="/docs/build-a-chat-assistant" />
   <Card title="Knowledge Base" description="Enable RAG so your assistant answers from your own documents." href="/docs/add-a-knowledge-base" />
-  <Card title="Tools & Automation" description="Give your assistant the ability to browse, call APIs, or delegate to sub-agents." href="/docs/add-tools-and-automation" />
-  <Card title="Admin & Enterprise" description="Manage users, organizations, and SSO integration." href="/docs/admin/users" />
+  <Card title="Tools & Automation" description="Give your assistant the ability to browse, call APIs, or delegate to sub-agents." href="/docs/tools-and-automation" />
+  <Card title="Admin & Enterprise" description="Manage users, organizations, and SSO integration." href="/docs/admin/enterprise-sso" />
 </Cards>
 
 <Callout type="info">

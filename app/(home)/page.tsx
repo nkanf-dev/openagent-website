@@ -52,6 +52,37 @@ function RepeatSVG({ className }: { className?: string }) {
   );
 }
 
+/* ── Initials Avatar (replaces external pravatar service) ───────────────────── */
+
+const AVATAR_COLORS = [
+  '#6D28D9', '#2563EB', '#059669', '#D97706', '#DC2626',
+  '#7C3AED', '#0891B2', '#BE185D', '#9333EA', '#0D9488',
+];
+
+function InitialsAvatar({ name, className }: { name: string; className?: string }) {
+  const initials = name.split(' ').slice(0, 2).map(n => n[0]).join('').toUpperCase();
+  const color = AVATAR_COLORS[name.charCodeAt(0) % AVATAR_COLORS.length];
+  return (
+    <div
+      className={className}
+      style={{
+        backgroundColor: color,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 700,
+        color: 'white',
+        fontSize: '13px',
+        fontFamily: 'system-ui, sans-serif',
+        flexShrink: 0,
+        letterSpacing: '0.02em',
+      }}
+    >
+      {initials}
+    </div>
+  );
+}
+
 /* ── Data ───────────────────────────────────────────────────────────────────── */
 
 const integrations = [
@@ -140,73 +171,61 @@ const features = [
 
 const testimonials = [
   {
-    avatar: 'https://i.pravatar.cc/150?img=12',
     name: 'Marcus Reyes', handle: 'marcusreyes_dev',
     content: 'Been using @OpenAgentAI for 3 months powering our customer support. 10k+ msgs/day across 3 channels, zero downtime. The MCP tool integration is genuinely insane 🔥',
     likes: 847, reposts: 124, date: 'Mar 12', role: 'Senior Engineer @ Stripe',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=45',
     name: 'Sarah Chen', handle: 'sarahchen_builds',
     content: 'OpenAgent + Telegram = the perfect async ops dashboard. Our team gets AI engineering briefings every morning. Replaced 3 SaaS tools. Cut costs by 60%.',
     likes: 1203, reposts: 287, date: 'Mar 28', role: 'CTO @ Lucent Labs',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=33',
     name: 'Janusz Kowalski', handle: 'janusz_mlops',
     content: 'Integrated @OpenAgentAI with our 50k-doc internal knowledge base. Retrieval accuracy: 67% → 94%. The semantic search is not playing around.',
     likes: 562, reposts: 89, date: 'Apr 1', role: 'ML Lead @ Booking.com',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=60',
     name: 'Rakesh Sharma', handle: 'rakesh_solutionarch',
     content: 'Deployed OpenAgent on-prem for our banking client. Compliance team approved first review. Audit logs, RBAC, SSO all just work. Enterprise-grade isn\'t marketing fluff here.',
     likes: 934, reposts: 201, date: 'Apr 5', role: 'Solutions Architect',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=15',
     name: 'Kai Hoffman', handle: 'llm_whisperer',
     content: 'Gemini → Claude → Qwen fallback chain routes by query complexity. Saved ~40% on API costs in month one. Smart multi-model routing is criminally underrated.',
     likes: 1891, reposts: 412, date: 'Apr 8', role: 'AI Infrastructure Engineer',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=47',
     name: 'Alex Park', handle: 'alex_platform_eng',
     content: 'Finally an agent platform that doesn\'t need to own my data. Self-hosted on k8s, air-gapped. This is what enterprise-ready actually looks like.',
     likes: 2140, reposts: 534, date: 'Apr 9', role: 'Platform Engineer',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=38',
     name: 'Diana Foster', handle: 'di_indie_builds',
     content: 'Shipped a Discord bot powered by OpenAgent in 2 hours. Reads our Notion docs, answers questions, escalates to humans when needed. My users think we have a full support team lol',
     likes: 3201, reposts: 891, date: 'Apr 11', role: 'Indie Hacker',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=52',
     name: 'Tom Blackwood', handle: 'tomblackwood_ai',
     content: 'Used 5 agent frameworks before settling on OpenAgent. Clean API, sane defaults, actual multi-tenant support, and it doesn\'t fight you off the happy path.',
     likes: 788, reposts: 156, date: 'Apr 13', role: 'Freelance AI Developer',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=44',
     name: 'Nadia Okonkwo', handle: 'nadia_data_eng',
     content: 'Running 200+ concurrent agent sessions across 15 enterprise clients from one deployment. OpenAgent just handles it. The observability built in is chef\'s kiss 🤌',
     likes: 1456, reposts: 342, date: 'Apr 15', role: 'Agency Founder',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=68',
     name: 'Liam Chen', handle: 'liamchen_revops',
     content: 'The plugin system is where OpenAgent shines. We wrote a custom Salesforce integration in an afternoon. Agents now update CRM records autonomously. RevOps team is obsessed.',
     likes: 671, reposts: 98, date: 'Apr 17', role: 'RevOps Engineer',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=59',
     name: 'Felix Wagner', handle: 'felix_deepseek_labs',
     content: 'Switch from GPT-4o to DeepSeek-V3 is one config line. Same agent behavior, 10× lower cost. No vendor lock-in is not a feature — it\'s the whole point of OpenAgent.',
     likes: 2847, reposts: 723, date: 'Apr 19', role: 'Research Engineer',
   },
   {
-    avatar: 'https://i.pravatar.cc/150?img=43',
     name: 'Priya Anand', handle: 'priya_builds',
     content: 'OpenAgent\'s WhatsApp integration handles our entire customer onboarding. From KYC doc collection to account setup. 0 → 500 customers in 3 weeks with 2 engineers.',
     likes: 4102, reposts: 1024, date: 'Apr 21', role: 'Co-founder @ FinTech',
@@ -253,15 +272,14 @@ const selfHostBenefits = [
 
 /* ── Sub-components ─────────────────────────────────────────────────────────── */
 
-function TweetCard({ avatar, name, handle, content, likes, reposts, date, role }: typeof testimonials[0]) {
+function TweetCard({ name, handle, content, likes, reposts, date, role }: typeof testimonials[0]) {
   return (
     <div className="card-glow-hover mb-4 break-inside-avoid rounded-2xl border border-fd-border bg-fd-card p-5 transition-all duration-300 hover:border-fd-primary/40">
       <div className="mb-3 flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <img
-            src={avatar}
-            alt={name}
-            className="size-9 shrink-0 rounded-full object-cover"
+          <InitialsAvatar
+            name={name}
+            className="size-9 rounded-full"
           />
           <div>
             <p className="text-sm font-semibold leading-tight text-fd-foreground">{name}</p>
@@ -304,6 +322,29 @@ export default function HomePage() {
         <div className="tech-grid dark:tech-grid pointer-events-none absolute inset-0 -z-20 opacity-100 dark:opacity-60" />
         <div className="tech-grid-light pointer-events-none absolute inset-0 -z-20 opacity-100 dark:hidden" />
 
+        {/* Floating circuit nodes */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          {/* Nodes */}
+          <div className="circuit-node" style={{ left: '8%', top: '15%', animationDelay: '0s' }} />
+          <div className="circuit-node" style={{ left: '92%', top: '20%', animationDelay: '1.5s' }} />
+          <div className="circuit-node" style={{ left: '15%', top: '70%', animationDelay: '3s' }} />
+          <div className="circuit-node" style={{ left: '85%', top: '65%', animationDelay: '0.8s' }} />
+          <div className="circuit-node" style={{ left: '50%', top: '88%', animationDelay: '2.2s' }} />
+          <div className="circuit-node" style={{ left: '30%', top: '12%', animationDelay: '4s' }} />
+          <div className="circuit-node" style={{ left: '72%', top: '8%', animationDelay: '1s' }} />
+          {/* Larger glow nodes */}
+          <div className="circuit-node-lg" style={{ left: '5%', top: '40%', animationDelay: '2s' }} />
+          <div className="circuit-node-lg" style={{ left: '95%', top: '45%', animationDelay: '3.5s' }} />
+          <div className="circuit-node-lg" style={{ left: '20%', top: '90%', animationDelay: '1.2s' }} />
+          {/* Horizontal data lines */}
+          <div className="data-line data-line-h" style={{ top: '25%', animationDelay: '0s' }} />
+          <div className="data-line data-line-h" style={{ top: '60%', animationDelay: '2s' }} />
+          <div className="data-line data-line-h" style={{ top: '80%', animationDelay: '4s' }} />
+          {/* Vertical data lines */}
+          <div className="data-line data-line-v" style={{ left: '20%', animationDelay: '1s' }} />
+          <div className="data-line data-line-v" style={{ left: '80%', animationDelay: '3s' }} />
+        </div>
+
         {/* Radial vignette */}
         <div className="pointer-events-none absolute inset-0 -z-10"
           style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, transparent 30%, var(--color-fd-background) 75%)' }}
@@ -338,11 +379,11 @@ export default function HomePage() {
 
         {/* Heading */}
         <h1 className="animate-fade-up animate-fade-up-1 mb-6 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight md:text-7xl lg:text-8xl">
-          <span className="block bg-gradient-to-r from-fd-foreground to-fd-foreground bg-clip-text text-transparent">
-            Build agents that
-          </span>
           <span className="block bg-gradient-to-r from-fd-primary via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-            actually do things
+            OpenAgent
+          </span>
+          <span className="block bg-gradient-to-r from-fd-foreground to-fd-foreground bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl font-bold mt-2">
+            Build agents that actually do things
           </span>
         </h1>
 
@@ -357,7 +398,7 @@ export default function HomePage() {
 
         {/* CTA row */}
         <div className="animate-fade-up animate-fade-up-3 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/docs/quick-start"
+          <Link href="/docs/install"
             className="btn-glow group inline-flex items-center gap-2 rounded-xl bg-fd-primary px-7 py-3.5 text-sm font-semibold text-fd-primary-foreground shadow-lg transition-all hover:brightness-110"
           >
             Get Started
@@ -366,7 +407,7 @@ export default function HomePage() {
           <Link href="/docs"
             className="inline-flex items-center gap-2 rounded-xl border border-fd-border bg-fd-card/80 px-7 py-3.5 text-sm font-semibold text-fd-foreground backdrop-blur-sm transition-colors hover:bg-fd-accent"
           >
-            Documentation
+            Docs
           </Link>
           <a href="https://github.com/the-open-agent/openagent" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-fd-border bg-fd-card/80 px-7 py-3.5 text-sm font-semibold text-fd-foreground backdrop-blur-sm transition-colors hover:bg-fd-accent"
@@ -389,8 +430,13 @@ export default function HomePage() {
       </section>
 
       {/* ══ INTEGRATION MARQUEE ══════════════════════════════════════════════ */}
-      <div className="border-y border-fd-border bg-fd-muted/30 py-4 overflow-hidden relative">
-        <div className="flex">
+      <div className="border-y border-fd-border bg-fd-muted/30 py-4 overflow-hidden relative"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+          maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+        }}
+      >
+        <div className="flex w-max">
           <div className="animate-marquee flex shrink-0 items-center gap-0 pr-3">
             {integrations.map((name, i) => (
               <span key={i} className="mx-3 inline-flex items-center gap-1.5 rounded-full border border-fd-border bg-fd-card px-3 py-1 text-xs font-medium text-fd-muted-foreground whitespace-nowrap">
@@ -557,7 +603,7 @@ export default function HomePage() {
                 OpenAgent sets itself up — you focus on building agents.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/docs/quick-start"
+                <Link href="/docs/install"
                   className="btn-glow inline-flex items-center gap-2 rounded-xl bg-fd-primary px-5 py-2.5 text-sm font-semibold text-fd-primary-foreground transition-all hover:brightness-110"
                 >
                   Installation Guide <ArrowRightIcon className="size-3.5" />
@@ -714,13 +760,13 @@ export default function HomePage() {
       <footer className="border-t border-fd-border px-4 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2.5">
-            <img 
-              src="https://cdn.openagentai.org/img/openagent-logo_1600x276.png" 
+            <img
+              src="https://cdn.openagentai.org/img/openagent-logo_1600x276.png"
               alt="OpenAgent"
               className="h-6 dark:hidden"
             />
-            <img 
-              src="https://cdn.openagentai.org/img/openagent-logo_1600x276_white.png" 
+            <img
+              src="https://cdn.openagentai.org/img/openagent-logo_1600x276_white.png"
               alt="OpenAgent"
               className="hidden h-6 dark:block"
             />

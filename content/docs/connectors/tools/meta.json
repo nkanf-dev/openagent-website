@@ -1,7 +1,6 @@
 {
   "title": "Tools",
   "pages": [
-    "builtin-tools",
-    "mcp"
+    "builtin-tools"
   ]
 }

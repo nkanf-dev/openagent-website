@@ -77,6 +77,7 @@ html > body[data-scroll-locked] {
 
 aside {
   background-color: var(--color-fd-background) !important;
+  border-right: 1px solid var(--color-fd-border) !important;
 }
 
 aside a[data-active='true'] {
@@ -85,9 +86,37 @@ aside a[data-active='true'] {
   font-weight: 600;
 }
 
-/* Dark mode sidebar: subtle left glow on active items */
+/* Dark mode sidebar: polished look */
+.dark aside {
+  background-color: #08080f !important;
+  border-right-color: #1a1928 !important;
+}
+
+.dark aside a {
+  color: #9090b8;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.dark aside a:hover:not([data-active='true']) {
+  color: #c8c8e8;
+  background-color: rgba(157, 113, 251, 0.06);
+}
+
 .dark aside a[data-active='true'] {
+  color: #c4b5fd !important;
+  background-color: rgba(157, 113, 251, 0.12) !important;
   box-shadow: inset 2px 0 0 var(--color-fd-primary);
+  font-weight: 600;
+}
+
+/* Sidebar section headers in dark mode */
+.dark aside [data-type='separator'],
+.dark aside p.text-xs,
+.dark aside span.text-xs {
+  color: #4a4a72 !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 /* ─── Prose ─────────────────────────────────────────────────────────────────── */
@@ -113,6 +142,85 @@ aside a[data-active='true'] {
     linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+/* ─── Circuit-board animated nodes ──────────────────────────────────────────── */
+
+.circuit-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-fd-primary);
+  opacity: 0;
+  animation: node-pulse 4s ease-in-out infinite;
+}
+
+.circuit-node::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--color-fd-primary);
+  opacity: 0.4;
+  animation: node-ring 4s ease-in-out infinite;
+}
+
+.circuit-node-lg {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0;
+  animation: node-pulse 6s ease-in-out infinite;
+}
+
+.circuit-node-lg::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  opacity: 0.3;
+  animation: node-ring 6s ease-in-out infinite;
+}
+
+/* Data flow lines */
+.data-line {
+  position: absolute;
+  opacity: 0;
+  animation: data-flow 5s ease-in-out infinite;
+}
+
+.data-line-h {
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-fd-primary) 50%, transparent 100%);
+}
+
+.data-line-v {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--cyan) 50%, transparent 100%);
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  30%, 70%  { opacity: 0.7; transform: scale(1); }
+}
+
+@keyframes node-ring {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50%       { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes data-flow {
+  0%, 100% { opacity: 0; }
+  20%, 80%  { opacity: 0.15; }
+  50%       { opacity: 0.3; }
 }
 
 /* ─── Animations ────────────────────────────────────────────────────────────── */

@@ -1,0 +1,138 @@
+---
+title: Install
+description: Get OpenAgent running and send your first AI-powered message in under 5 minutes.
+summary: Get OpenAgent installed and run your first chat in minutes.
+read_when:
+  - First time setup from zero
+  - You want the fastest path to a working chat
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+# Quick Start
+
+The goal of this guide is to reach the **"First Message"** milestone as quickly as possible. OpenAgent runs on port `14000` by default.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- **OpenAgent installed** — choose a deployment method below: one-line installer, Docker, or development setup.
+- **An API key** — get one from a model provider like DeepSeek, OpenAI, Anthropic, or any supported provider.
+
+## Deploy the Infrastructure
+
+<Steps>
+  <Step>
+    ### Choose Your Deployment Method
+
+    <Tabs items={['One-Line Install', 'Docker', 'Development']}>
+    <Tab value="One-Line Install">
+
+    **macOS / Linux / WSL**
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/the-open-agent/openagent/master/scripts/install.sh | bash
+    ```
+
+    **Windows (PowerShell)**
+    ```powershell
+    irm https://raw.githubusercontent.com/the-open-agent/openagent/master/scripts/install.ps1 | iex
+    ```
+
+    </Tab>
+    <Tab value="Docker">
+
+    ```bash
+    docker run -d -p 14000:14000 --name openagent casbin/openagent
+    ```
+
+    </Tab>
+    <Tab value="Development">
+
+    Requires Go 1.21+, Node.js 18+, and MySQL 8.0+.
+
+    ```bash
+    git clone https://github.com/the-open-agent/openagent.git
+    cd openagent
+    go run main.go
+    # Separate terminal
+    cd web && yarn install && yarn start
+    ```
+
+    </Tab>
+    </Tabs>
+
+    Once the server is running, navigate to **`http://localhost:14000`**.
+
+  </Step>
+  <Step>
+    ### Configure a Provider
+
+    Navigate to **Providers → Add Provider**.
+    - **Category**: `Model`
+    - **Type**: `DeepSeek` (Recommended for cost) or `OpenAI`
+    - **API Key**: Enter your credentials.
+    - **Model (Sub Type)**: Select `deepseek-v4-flash` or a model ID supported by your provider.
+
+  </Step>
+  <Step>
+    ### Initialize an Agent (Store)
+
+    Navigate to **Stores → Add Store**.
+    - **Name**: `primary-assistant`
+    - **Model Provider**: Select the provider from the previous step.
+    - **System Prompt**: _"You are a professional research assistant."_
+
+  </Step>
+  <Step>
+    ### Validate with Chat
+
+    Open the **Chat** interface from the sidebar. Select your agent and send:
+    > "Hello OpenAgent, identify yourself."
+
+    **Milestone Reached:** You now have a functional, self-hosted orchestration engine.
+
+  </Step>
+</Steps>
+
+## Activate Knowledge Retrieval (RAG)
+
+Transition from a standard LLM to a **Knowledge Agent** by indexing your own documents.
+
+<Steps>
+  <Step>
+    ### Add an Embedding Provider
+
+    Go to **Providers → Add Provider**.
+    - **Category**: `Embedding`
+    - **Type**: e.g., `OpenAI`
+    - **Sub Type**: `text-embedding-3-small` (Recommended)
+
+    This provider handles the "translation" of your text into mathematical vectors.
+
+  </Step>
+  <Step>
+    ### Link Knowledge to Agent
+
+    Edit your Store and assign the **Embedding Provider**. Set **Knowledge Count** to `5` (Recommended for 2026 models) to define retrieval density.
+
+  </Step>
+  <Step>
+    ### Ingest Documents
+
+    Go to **Files → Upload**, drop your PDFs/Markdown files, and assign them to the Store. Once the status reaches **Finished**, the agent is grounded in your data.
+
+  </Step>
+</Steps>
+
+## What to do next
+
+<Cards>
+  <Card title="Build a Chat Assistant" description="Create a chat assistant backed by any LLM provider." href="/docs/build-a-chat-assistant" />
+  <Card title="Add a Knowledge Base" description="Enable RAG so your assistant answers from your own documents." href="/docs/add-a-knowledge-base" />
+  <Card title="Tools & Automation" description="Give your agent the ability to browse, call APIs, or delegate to sub-agents." href="/docs/add-tools-and-automation" />
+  <Card title="Introduction" description="Understand the four layers of OpenAgent." href="/docs/what-is-openagent" />
+</Cards>

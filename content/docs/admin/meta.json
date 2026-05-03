@@ -1,12 +1,12 @@
 {
   "title": "Admin",
   "pages": [
+    "settings",
     "resources",
-    "sites",
-    "usages",
-    "activities",
+    "ai-usage",
+    "visitors",
     "system-info",
     "swagger",
-    "users"
+    "enterprise-sso"
   ]
 }
